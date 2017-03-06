@@ -1,0 +1,11 @@
+[v,map] = imread('pre.jpe'); 
+v = double(v); 
+[ROW,COL,i] = size(v);
+v = v + ones(ROW,COL,i);
+v = log(v);
+v = eds(v,ROW,COL);
+v = exp(v); 
+v = round(v); 
+v = v - ones(ROW,COL,i); 
+v = uint8(v); 
+imshow(v);
